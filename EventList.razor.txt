@@ -1,0 +1,22 @@
+<Virtualize Items="@EventList" Context="event">
+    <div class="event-card">
+        <h2>@event.Name</h2>
+        <p>Date: @event.Date.ToString("MMMM dd, yyyy")</p>
+        <p>Location: @event.Location</p>
+    </div>
+</Virtualize>
+
+@code {
+    private List<Event> EventList = new List<Event>
+    {
+        new Event { Name = "Annual Gala", Date = new DateTime(2025, 4, 15), Location = "Grand Ballroom, City Center" },
+        // Add more mock data here for testing
+    };
+
+    public class Event
+    {
+        public string Name { get; set; }
+        public DateTime Date { get; set; }
+        public string Location { get; set; }
+    }
+}
