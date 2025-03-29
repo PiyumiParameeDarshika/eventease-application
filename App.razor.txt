@@ -1,9 +1,0 @@
-<Router AppAssembly="@typeof(Program).Assembly">
-    <Found>
-        <RouteView />
-    </Found>
-    <NotFound>
-        <h1>Oops! The page you’re looking for does not exist.</h1>
-        <NavLink href="/events" class="btn btn-primary">Go to Event List</NavLink>
-    </NotFound>
-</Router>
