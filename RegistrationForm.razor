@@ -1,0 +1,17 @@
+<form>
+    <input @bind="UserName" placeholder="Your Name" required />
+    <span style="color: red;" hidden="@IsUserNameValid">Invalid Name</span>
+
+    <input @bind="UserEmail" placeholder="Your Email" required />
+    <span style="color: red;" hidden="@IsEmailValid">Invalid Email</span>
+
+    <button type="submit">Register</button>
+</form>
+
+@code {
+    private string UserName { get; set; }
+    private string UserEmail { get; set; }
+
+    private bool IsUserNameValid => !string.IsNullOrWhiteSpace(UserName);
+    private bool IsEmailValid => UserEmail.Contains("@");
+}
